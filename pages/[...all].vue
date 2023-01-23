@@ -20,6 +20,7 @@ const route = useRoute();
 const { data: seoResult } = await useAsyncData(
   'cmsResponse' + route.path,
   async () => {
+    console.log(route.path);
     const seoUrl = await resolvePath(route.path);
     return seoUrl;
   }
@@ -44,7 +45,7 @@ function render() {
 }
 </script>
 <template>
-  <render v-if="seoResult && routeName" />
-  <!-- if route.path not found in sw6 seo urls load storyblok-->
-  <ResolveStoryBlokContent />
+  <!-- if routeName is landingPage get cms blocks from storyblok -->
+  <ResolveStoryBlokContent v-if="routeName === 'frontend.landing.page'" />
+  <render />
 </template>
