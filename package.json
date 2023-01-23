@@ -11,11 +11,11 @@
     "analyze": "nuxi analyze"
   },
   "dependencies": {
+    "@shopware-pwa/api-client": "canary",
     "@shopware-pwa/cms-base": "canary",
-    "@shopware-pwa/composables-next": "canary",
+    "@shopware-pwa/composables-next": "0.0.0-canary-20230119141656",
     "@shopware-pwa/helpers-next": "canary",
     "@shopware-pwa/nuxt3-module": "canary",
-    "@shopware-pwa/api-client": "canary",
     "@shopware-pwa/types": "canary",
     "@unocss/nuxt": "^0.48.0",
     "@vuelidate/core": "^2.0.0",
