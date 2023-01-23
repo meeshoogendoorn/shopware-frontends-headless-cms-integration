@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { getSessionContext } from "@shopware-pwa/api-client";
-import { SessionContext } from "@shopware-pwa/types";
+import { getSessionContext } from '@shopware-pwa/api-client';
+import { SessionContext } from '@shopware-pwa/types';
 
 useHead({
-  title: "Shopware Demo store",
-  meta: [{ name: "description", content: "Shopware Demo store" }],
+  title: 'Shopware Demo store',
+  meta: [{ name: 'description', content: 'Shopware Demo store' }],
   htmlAttrs: {
-    lang: "en",
+    lang: 'en',
   },
 });
 
@@ -17,7 +17,7 @@ onBeforeMount(async () => {
 
 const { apiInstance } = useShopwareContext();
 const { data: sessionContextData } = await useAsyncData(
-  "sessionContext",
+  'sessionContext',
   async () => {
     return await getSessionContext(apiInstance);
   }
@@ -36,9 +36,9 @@ onMounted(() => {
 });
 
 const isSidebarOpen = ref(false);
-provide("isSidebarOpen", isSidebarOpen);
+provide('isSidebarOpen', isSidebarOpen);
 
-const modalContent = ref<string>("");
+const modalContent = ref<string>('');
 const modalProps = ref<object | null | undefined>({});
 const modalHandler = {
   open: (component: string, props?: object | null) => {
@@ -46,15 +46,15 @@ const modalHandler = {
     modalProps.value = props;
   },
   close: () => {
-    modalContent.value = "";
+    modalContent.value = '';
     modalProps.value = {};
   },
 };
 
-provide("modal", { modalContent, modalProps, ...modalHandler });
+provide('modal', { modalContent, modalProps, ...modalHandler });
 
 const isSideMenuOpened = ref(false);
-provide("isSideMenuOpened", isSideMenuOpened);
+provide('isSideMenuOpened', isSideMenuOpened);
 </script>
 
 <template>
@@ -69,7 +69,7 @@ h2 {
 }
 
 select {
-  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIGZpbGw9J25vbmUnIHZpZXdCb3g9JzAgMCAyMCAyMCc+PHBhdGggc3Ryb2tlPScjNmI3MjgwJyBzdHJva2UtbGluZWNhcD0ncm91bmQnIHN0cm9rZS1saW5lam9pbj0ncm91bmQnIHN0cm9rZS13aWR0aD0nMS41JyBkPSdNNiA4bDQgNCA0LTQnLz48L3N2Zz4=");
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIGZpbGw9J25vbmUnIHZpZXdCb3g9JzAgMCAyMCAyMCc+PHBhdGggc3Ryb2tlPScjNmI3MjgwJyBzdHJva2UtbGluZWNhcD0ncm91bmQnIHN0cm9rZS1saW5lam9pbj0ncm91bmQnIHN0cm9rZS13aWR0aD0nMS41JyBkPSdNNiA4bDQgNCA0LTQnLz48L3N2Zz4=');
   background-position: right 0.5rem center;
   background-repeat: no-repeat;
   background-size: 1.5em 1.5em;

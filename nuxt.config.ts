@@ -1,4 +1,4 @@
-import transformerDirective from "@unocss/transformer-directives";
+import transformerDirective from '@unocss/transformer-directives';
 
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
 export default defineNuxtConfig({
@@ -12,21 +12,27 @@ export default defineNuxtConfig({
      * - https://github.com/vueuse/vueuse/pull/2449
      * - https://github.com/vueuse/vueuse/actions/workflows/publish.yml
      */
-    useMeta: "~/composables/useMeta",
+    useMeta: '~/composables/useMeta',
   },
   typescript: {
     typeCheck: true,
     strict: true,
   },
   modules: [
-    "@vueuse/nuxt",
-    "@unocss/nuxt",
-    "@shopware-pwa/nuxt3-module",
-    "@shopware-pwa/cms-base",
+    '@vueuse/nuxt',
+    '@unocss/nuxt',
+    '@shopware-pwa/nuxt3-module',
+    '@shopware-pwa/cms-base',
+    '@storyblok/nuxt',
   ],
+
+  storyblok: {
+    accessToken: process.env.STORYBLOK_ACCESS_TOKEN,
+  },
+
   // components: true,
   components: {
-    dirs: ["~/components"],
+    dirs: ['~/components'],
     global: true,
   },
   vueuse: {
@@ -47,21 +53,21 @@ export default defineNuxtConfig({
     transformers: [transformerDirective()],
     theme: {
       extend: {
-        width: "width",
-        height: "height",
+        width: 'width',
+        height: 'height',
       },
       colors: {
         brand: {
-          primary: "#189eff",
-          light: "#5ebbff",
-          dark: "#0081df",
+          primary: '#189eff',
+          light: '#5ebbff',
+          dark: '#0081df',
         },
       },
     },
   },
   router: {
     options: {
-      linkExactActiveClass: "text-brand-primary",
+      linkExactActiveClass: 'text-brand-primary',
     },
   },
 });
