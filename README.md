@@ -1,6 +1,6 @@
 # Shopware Frontends POC library
 
-In this repo u can find multiple branches with some solutions for some challenges u can get while developing with shopware/frontends.
+In this repository, you can find multiple branches containing solutions for various challenges that may arise while developing with `shopware/frontends`F.
 
 * Storyblok Integration (using SW6 seo-url resolver)
 * Fast PageResolver (SW6 SeoUrl Resolver with caching using unstorage)
